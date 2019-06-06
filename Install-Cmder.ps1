@@ -1,6 +1,5 @@
-# Identify latest release from: https://github.com/cmderdev/cmder/releases/latest
-
-# Download cmder.zip
+# Download latest release from: https://github.com/cmderdev/cmder/releases/latest
+Invoke-WebRequest -UseBasicParsing -Uri https://github.com/cmderdev/cmder/releases/latest/download/cmder.zip -OutFile .\Cmder.zip
 
 # Extract cmder.zip to C:\Program Files\Cmder\
 New-Item -Path 'C:\Program Files' -Name "Cmder" -ItemType Directory -Force
