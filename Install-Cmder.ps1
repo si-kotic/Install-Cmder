@@ -12,5 +12,5 @@ Copy-Item -Path .\ConEmu.xml -Destination "C:\Program Files\cmder\vendor\conemu-
 ## This involves changing some details in Cmder.xml such as LogonTrigger\UserId
 ## Might also involve changing Author, some testing is required.
 #$SID = (New-Object System.Security.Principal.NTAccount($ENV:USERDOMAIN,$ENV:USERNAME)).Translate([System.Security.Principal.SecurityIdentifier]).Value
-$trigger = New-ScheduledTaskTrigger -AtLogOn 
+$trigger = New-ScheduledTaskTrigger -AtLogOn -User "$ENV:USERDOMAIN\$ENV:USERNAME"
 Register-ScheduledTask -TaskName Cmder -Xml (Get-Content .\Cmder.xml | Out-String) -User "$ENV:USERDNSDOMAIN\$ENV:USERNAME" -Trigger $trigger -Force
