@@ -3,7 +3,7 @@ Invoke-WebRequest -UseBasicParsing -Uri https://github.com/cmderdev/cmder/releas
 
 # Extract cmder.zip to C:\Program Files\Cmder\
 New-Item -Path 'C:\Program Files' -Name "Cmder" -ItemType Directory -Force
-Expand-Archive -Path .\Cmder.zip -DestinationPath 'C:\Program Files\' -Force
+Expand-Archive -Path .\Cmder.zip -DestinationPath 'C:\Program Files\Cmder\' -Force
 
 # Copy ConEmu.xml to C:\Program Files\cmder\vendor\conemu-maximus5\ConEmu.xml
 Copy-Item -Path .\ConEmu.xml -Destination "C:\Program Files\cmder\vendor\conemu-maximus5\" -Force
